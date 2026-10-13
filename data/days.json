@@ -48,14 +48,14 @@
   {
    "slot": 25,
    "name": "Spooky's Arcade",
-   "what": "Browser-based GBA emulator arcade for private family use. Runs GBA ROMs in EmulatorJS (loaded from CDN), stores browser save states via EmulatorJS, serves ROM library.",
+   "what": "JavaScript browser arcade: homebrew games, instantly playable in a tab.",
    "loc": 2072,
    "commits": 2,
    "day": "2026-10-14",
    "status": "upcoming",
    "url": "",
    "image": "",
-   "pitch": "Browser-based GBA emulator arcade with admin ROM management and play analytics",
+   "pitch": "Browser arcade of homebrew GBA games, instantly playable, with play stats.",
    "clip": "GBA game (e.g., Pok\u00e9mon, Sonic) running in EmulatorJS browser player",
    "number": "2,072 lines of code, 2 commits"
   },
