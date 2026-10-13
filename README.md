@@ -1,5 +1,7 @@
 # Buildtober 2026 site
 
+Live: https://kitsunetech1.github.io/buildtober-site/ (buildtober.xyz once DNS lands). MIT, see LICENSE.
+
 One static page: hero countdown, a Mon-Sun October calendar with one card per project on its day, a plain list with pitches for phones, and a footer. No build step, no framework, no CDN, works offline.
 
 Files: `index.html`, `style.css`, `app.js`, `days.json` (data), `days.js` (mirror of days.json, see below), `img/<slug>.svg`, `CNAME`, `.nojekyll`.
