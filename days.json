@@ -65,15 +65,15 @@
   {
    "slot": 25,
    "name": "Spooky's Arcade",
-   "what": "Browser-based GBA emulator arcade for private family use. Runs GBA ROMs in EmulatorJS (loaded from CDN), stores browser save states via EmulatorJS, serves ROM library.",
+   "what": "JavaScript browser arcade: homebrew games, instantly playable in a tab.",
    "loc": 2072,
    "commits": 2,
    "day": "2026-10-14",
    "status": "upcoming",
    "url": "",
    "image": "img/spooky-s-arcade.svg",
-   "pitch": "Browser-based GBA emulator arcade with admin ROM management and play analytics",
-   "clip": "GBA game (e.g., Pokémon, Sonic) running in EmulatorJS browser player",
+   "pitch": "Browser arcade of homebrew GBA games, instantly playable, with play stats.",
+   "clip": "GBA game (e.g., Pok\u00e9mon, Sonic) running in EmulatorJS browser player",
    "number": "2,072 lines of code, 2 commits",
    "slug": "spooky-s-arcade",
    "hue": 95
@@ -121,7 +121,7 @@
    "url": "",
    "image": "img/hunyuan3d-live-webui.svg",
    "pitch": "Live Hunyuan3D-2 interface with real-time 3D preview and multi-model prompt enhancement, deployed but gated.",
-   "clip": "TextInput → ComfyUI texture gen → Hunyuan diffusion → Realtime GLB stream in browser viewport",
+   "clip": "TextInput \u2192 ComfyUI texture gen \u2192 Hunyuan diffusion \u2192 Realtime GLB stream in browser viewport",
    "number": "3,009 lines of code, 16 commits",
    "slug": "hunyuan3d-live-webui",
    "hue": 267
