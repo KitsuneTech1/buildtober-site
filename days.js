@@ -1,7 +1,18 @@
 window.BUILDTOBER_DAYS={
- "generated": "2026-10-12",
+ "title": "Buildtober 2026",
+ "tagline": "31 projects in 31 days. One page, one shipping calendar.",
+ "owner": {
+  "name": "Moo",
+  "org": "Kitsune Technologies",
+  "url": "https://kitsunetechnologies.org",
+  "github": "https://github.com/KitsuneTech1"
+ },
+ "github_url": "https://github.com/KitsuneTech1/buildtober-site",
  "start": "2026-10-01",
  "end": "2026-10-31",
+ "timezone_offset": "-05:00",
+ "finale_slug": "the-lobby",
+ "calendar_note": "Dashed days are before the list existed (Oct 1 to 12).",
  "days": [
   {
    "slot": 30,
