@@ -4,27 +4,161 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Buildtober 2026: 31 projects in 31 days</title>
-<meta name="description" content="Buildtober 2026 by Moo at Kitsune Technologies: 31 projects shipping across October.">
+<meta name="description" content="Buildtober 2026 by Moo at Kitsune Technologies: 31 projects shipping across October. Fork it and run your own month.">
+<meta name="theme-color" content="#0b0d12">
+<meta property="og:title" content="Buildtober 2026">
+<meta property="og:description" content="31 projects in 31 days. A shipping calendar you can fork.">
+<meta property="og:image" content="img/screenshot.png">
 <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/kitsune-logo-192.png">
 </head>
 <body>
 <a class="skip" href="#cal">Skip to calendar</a>
-<header class="hero">
-  <h1>Buildtober <span>2026</span></h1>
-  <p class="left" id="left" aria-live="off">Loading countdown...</p>
-  <p class="tick" id="tick"></p>
-  <p class="tick" id="finale"></p>
-  <div class="bar" aria-hidden="true"><i id="barfill"></i></div>
+
+<header class="top">
+  <a class="brand" href="#top" id="top">
+    <img src="img/kitsune-logo-96.png" width="36" height="36" alt="" class="logo">
+    <span class="brand-name" data-bind="title-short">Buildtober</span>
+  </a>
+  <nav aria-label="Page">
+    <a href="#cal">Calendar</a>
+    <a href="#listh">List</a>
+    <a href="#use">Fork it</a>
+    <a class="gh" data-bind="github" href="https://github.com/KitsuneTech1/buildtober-site">GitHub</a>
+  </nav>
 </header>
+
+<section class="hero" aria-labelledby="h1">
+  <div class="hero-in">
+    <p class="eyebrow"><span class="dot" aria-hidden="true"></span><span id="state">Shipping season</span></p>
+    <h1 id="h1">Buildtober <span>2026</span></h1>
+    <p class="tagline" id="tagline">31 projects in 31 days. One page, one shipping calendar.</p>
+
+    <div class="clock" id="clock" role="timer" aria-label="Time left">
+      <div class="unit"><b id="cd">--</b><span>days</span></div>
+      <div class="unit"><b id="ch">--</b><span>hours</span></div>
+      <div class="unit"><b id="cm">--</b><span>min</span></div>
+      <div class="unit"><b id="cs">--</b><span>sec</span></div>
+    </div>
+    <p class="until" id="until"></p>
+
+    <div class="prog">
+      <div class="bar" aria-hidden="true"><i id="barfill"></i></div>
+      <p class="left" id="left" aria-live="off">Loading countdown...</p>
+    </div>
+    <p class="finale" id="finale"></p>
+
+    <p class="cta">
+      <a class="btn primary" href="#cal">See the calendar</a>
+      <a class="btn" href="#use">Run your own month</a>
+    </p>
+    <ul class="chips" aria-label="About this project">
+      <li>MIT</li><li>Vanilla JS</li><li>No build step</li><li>WCAG AA</li><li>Fork friendly</li>
+    </ul>
+  </div>
+</section>
+
 <main>
-  <h2 id="calh">October 2026</h2>
-  <div id="cal" tabindex="-1"><noscript>The calendar needs JavaScript. The list below has the same projects.</noscript></div>
-  <h2 id="listh">All 31, in order</h2>
-  <ol class="list" id="list"></ol>
+  <section aria-labelledby="calh">
+    <h2 id="calh">Calendar</h2>
+    <p class="note" id="calnote"></p>
+    <div id="cal" tabindex="-1"><noscript>The calendar needs JavaScript. Read the project list in days.json.</noscript></div>
+  </section>
+
+  <section aria-labelledby="listh">
+    <h2 id="listh">All ships, in order</h2>
+    <ol class="list" id="list"></ol>
+  </section>
+
+  <section class="use" id="use" aria-labelledby="useh">
+    <h2 id="useh">Use it for your own month</h2>
+    <p class="lead">This page is one folder of plain files. Edit one JSON file and you have your own shipping calendar. Any month, any number of days.</p>
+    <div class="two">
+      <article class="panel" aria-labelledby="normh">
+        <h3 id="normh"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19h8"/><path d="m4 17 6-6-6-6"/></svg> Normal install</h3>
+        <ol class="steps">
+          <li><b>Fork the repo.</b> Click Fork on <a data-bind="github" href="https://github.com/KitsuneTech1/buildtober-site">GitHub</a>, or run <code>gh repo fork KitsuneTech1/buildtober-site --clone</code>.</li>
+          <li><b>Edit <code>days.json</code>.</b> Set <code>title</code>, <code>start</code>, <code>end</code>, <code>owner</code> and your list of <code>days</code>. The calendar draws itself from those dates.</li>
+          <li><b>Run <code>node tools/sync.mjs</code>.</b> It makes a placeholder card for each ship and refreshes <code>days.js</code>. Skip it if you draw your own cards.</li>
+          <li><b>Enable Pages.</b> Settings, Pages, deploy from branch <code>main</code>, folder <code>/ (root)</code>. Your site is at <code>https://YOU.github.io/REPO/</code>.</li>
+          <li><b>Optional: custom domain.</b> Put the domain in a file named <code>CNAME</code> at the repo root, then add these records at your DNS host.</li>
+        </ol>
+        <div class="dns" role="region" aria-label="DNS records" tabindex="0">
+          <table>
+            <thead><tr><th scope="col">Type</th><th scope="col">Name</th><th scope="col">Value</th></tr></thead>
+            <tbody>
+              <tr><td>A</td><td>@</td><td>185.199.108.153<br>185.199.109.153<br>185.199.110.153<br>185.199.111.153</td></tr>
+              <tr><td>AAAA</td><td>@</td><td>2606:50c0:8000::153<br>2606:50c0:8001::153<br>2606:50c0:8002::153<br>2606:50c0:8003::153</td></tr>
+              <tr><td>CNAME</td><td>www</td><td>YOUR-USER.github.io</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="fine">Then tick Enforce HTTPS in Pages settings once the certificate is ready.</p>
+      </article>
+
+      <article class="panel agent" aria-labelledby="agh">
+        <h3 id="agh"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8V4H8"/><rect width="16" height="12" x="4" y="8" rx="2"/><path d="M2 14h2"/><path d="M20 14h2"/><path d="M15 13v2"/><path d="M9 13v2"/></svg> AI agent setup</h3>
+        <p>Paste this into Claude Code, Codex or Cursor. You need the <a href="https://cli.github.com/">GitHub CLI</a> logged in (<code>gh auth status</code>) and Node.</p>
+        <div class="prompt-wrap">
+          <div class="prompt-bar">
+            <span id="pl">Prompt</span>
+            <button type="button" class="copy-prompt" aria-describedby="copystatus">
+              <svg class="ico i-copy" viewBox="0 0 24 24" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+              <svg class="ico i-check" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>
+              <span class="copy-label">Copy prompt</span>
+            </button>
+          </div>
+          <pre id="prompt" class="prompt" tabindex="0" aria-labelledby="pl">You are setting up my own copy of the Buildtober shipping-calendar site. Work in a new empty folder. Do not touch any repo that is not the new fork.
+
+GOAL
+A public GitHub Pages site where each day of a date range has one or more of my projects, with a countdown. Template: https://github.com/KitsuneTech1/buildtober-site
+
+STEPS
+1. Check tools. Run `gh auth status` and `node --version`. If gh is not logged in, stop and tell me to run `gh auth login`. Do not ask me for a token.
+2. Ask me these questions in ONE message and wait for the answers:
+   a. Site title (example: "Shipmas 2026")
+   b. Start date and end date (YYYY-MM-DD), and my UTC offset (example: -05:00)
+   c. My name, my org or company (optional), and my website URL (optional)
+   d. My project list: for each project give name, a one-line pitch, and the day it ships. A pasted list is fine. If a day has no project, leave it empty.
+   e. Repo name for the fork (default: buildtober-site)
+   f. Optional custom domain
+3. Fork and clone: `gh repo fork KitsuneTech1/buildtober-site --clone --fork-name REPO` then cd into it.
+4. Remove the template author's content: delete the `hold/` and `data/` folders, delete every file in `img/` except `kitsune-logo-96.png`, `kitsune-logo-192.png` and `screenshot.png`, and replace the README.md body with a short description of my site.
+5. Rewrite `days.json` completely. Top-level keys: title, tagline, owner {name, org, url, github}, github_url (my fork URL), start, end, timezone_offset, finale_slug (optional), calendar_note (optional), days. Each day needs: slot (1..N, unique), name, pitch, day (YYYY-MM-DD inside start..end), status ("upcoming" or "shipped"), url ("" until it ships), slug (lowercase-with-dashes), image ("img/SLUG.svg"), hue (0-359). Keep JSON valid and UTF-8. No em dashes in any text you write.
+6. Run `node tools/sync.mjs`. It writes days.js and a placeholder card for every slug.
+7. Open index.html and check it with a headless check only. Do not open a browser window. If you have no headless tool, run `node -e "JSON.parse(require('fs').readFileSync('days.json','utf8'))"` and confirm every `day` is inside start..end.
+8. Commit with a clear message and push to the default branch.
+9. Enable Pages: `gh api -X POST repos/OWNER/REPO/pages -f "source[branch]=main" -f "source[path]=/"` (OWNER from `gh api user --jq .login`). If it says Pages already exists, that is fine.
+10. If I gave a domain: write it to a file named `CNAME` at the repo root, commit, push, then run `gh api -X PUT repos/OWNER/REPO/pages -f cname=DOMAIN`. Print the DNS records I must add (A 185.199.108.153, .109.153, .110.153, .111.153; AAAA 2606:50c0:8000::153 through 8003::153; CNAME www to OWNER.github.io).
+11. Wait for the build: poll `gh api repos/OWNER/REPO/pages/builds/latest --jq .status` every 5 seconds until it says "built".
+12. Report: the live URL (https://OWNER.github.io/REPO/ or my domain), the repo URL, the number of days filled, and anything you could not do.
+
+RULES
+Never print or store secrets. Never open a GUI or a browser window. Do not delete anything outside this folder. If a step fails, say which step and why, then stop.</pre>
+        </div>
+        <p class="fine" id="copystatus" role="status" aria-live="polite"></p>
+      </article>
+    </div>
+  </section>
 </main>
-<footer>
-  <p>built by Moo at Kitsune Technologies, <a href="https://github.com/KitsuneTech1/buildtober-site">full source on GitHub</a></p>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="foot-brand">
+      <img src="img/kitsune-logo-192.png" width="64" height="64" alt="Kitsune Technologies logo" class="logo big">
+      <div>
+        <p class="built" id="built">Built by Moo at Kitsune Technologies</p>
+        <p class="fork">Run your own month: <a id="forklink" href="https://github.com/KitsuneTech1/buildtober-site#use-it-yourself">fork it</a></p>
+      </div>
+    </div>
+    <ul class="links" aria-label="Links">
+      <li><a id="f-site" href="https://kitsunetechnologies.org">kitsunetechnologies.org</a></li>
+      <li><a id="f-gh" href="https://github.com/KitsuneTech1">GitHub: KitsuneTech1</a></li>
+      <li><a data-bind="github" href="https://github.com/KitsuneTech1/buildtober-site">Source</a></li>
+      <li><a id="f-lic" href="https://github.com/KitsuneTech1/buildtober-site/blob/main/LICENSE">MIT license</a></li>
+    </ul>
+  </div>
 </footer>
 <script src="app.js"></script>
 </body>
