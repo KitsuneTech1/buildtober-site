@@ -39,9 +39,9 @@ Two ways to set it up. Pick one.
 
 To preview locally, run `python -m http.server` in the folder and open `http://localhost:8000`. Opening `index.html` straight from disk also works, because `days.js` mirrors `days.json`.
 
-### AI agent setup
+### Agent setup
 
-Paste this into Claude Code, Codex or Cursor. You need the GitHub CLI logged in (`gh auth status`) and Node.
+Paste this into your CLI terminal or agent. You need the GitHub CLI logged in (`gh auth status`) and Node.
 
 ```text
 You are setting up my own copy of the Buildtober shipping-calendar site. Work in a new empty folder. Do not touch any repo that is not the new fork.
